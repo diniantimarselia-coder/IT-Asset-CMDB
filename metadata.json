@@ -1,0 +1,6 @@
+{
+  "name": "CoreCMDB",
+  "description": "Enterprise IT Asset and CMDB application.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

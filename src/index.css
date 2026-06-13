@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@layer utilities {
+  /* Dynamic fade-in animations */
+  .animate-fade-in {
+    animation: fadeIn 0.4s ease-out forwards;
+  }
+  
+  .animate-slide-up {
+    animation: slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
+/* Print-specific layout configuration */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 12px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Hide interactive screens, inputs, sidebars, buttons */
+  .no-print,
+  header,
+  nav,
+  footer,
+  button,
+  form,
+  .md\:hidden {
+    display: none !important;
+  }
+
+  /* Make the printable paper report take full layout width */
+  .printable-region {
+    border: none !important;
+    box-shadow: none !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: block !important;
+  }
+
+  table {
+    page-break-inside: auto;
+  }
+
+  tr {
+    page-break-inside: avoid;
+    page-break-after: auto;
+  }
+}
